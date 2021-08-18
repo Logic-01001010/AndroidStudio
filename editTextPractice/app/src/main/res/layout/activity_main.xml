@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_marginTop="30px"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="에디트 텍스트 연습"
+        android:textSize="120px"
+        android:gravity="center"
+        ></TextView>
+
+    <EditText
+        android:layout_marginTop="200px"
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="250px"
+        ></EditText>
+
+
+</LinearLayout>
