@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtView"
+        android:layout_marginTop="400px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No data"
+        android:layout_gravity="center"
+        android:textSize="200px"/>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_marginTop="240px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get GPS"
+        android:textSize="140px"/>
+
+</LinearLayout>
