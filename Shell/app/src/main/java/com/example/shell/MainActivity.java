@@ -3,6 +3,8 @@ package com.example.shell;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -43,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
 
                 }
+                else
+                    return false;
+
                 return true;
 
             }
