@@ -8,29 +8,27 @@
     tools:context=".MainActivity">
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+
 
     <TextView
-        android:textSize="30px"
+        android:layout_margin="10px"
+        android:textSize="35px"
         android:id="@+id/txtView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="command"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Latest update: 2021-08-22\nStarted Shell.\n\n"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textIsSelectable="true"/>
 
-    </LinearLayout>
 
     </ScrollView>
 
