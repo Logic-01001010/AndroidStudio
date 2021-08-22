@@ -5,19 +5,15 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private static Handler mHandler;
     private static Process p = null;
 
+    private static float currentTextSize;
 
     private void checkStoragePermission(){
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
@@ -45,6 +42,31 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 0);
 
     }
+
+
+    // Volume 버튼으로 editText 글씨 사이즈 조절
+    @Override
+    public boolean onKeyDown(int KeyCode, KeyEvent event){
+        switch(KeyCode){
+            case KeyEvent.KEYCODE_VOLUME_UP:
+
+                txtView.setTextSize( ( currentTextSize + (float)2.0) );
+
+                currentTextSize = currentTextSize + (float)2.0;
+
+                return true;
+
+            case KeyEvent.KEYCODE_VOLUME_DOWN:
+
+                txtView.setTextSize( ( currentTextSize - (float)2.0) );
+
+                currentTextSize = currentTextSize - (float)2.0;
+
+                return true;
+        }
+        return super.onKeyDown(KeyCode, event);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +82,10 @@ public class MainActivity extends AppCompatActivity {
         // 저장소 권한 확인
         checkStoragePermission();
 
+        // 텍스트 사이즈 초기 설정
+        txtView.setTextSize( (float)5.0 );
+        currentTextSize = txtView.getTextSize();
+        txtView.setTextSize( ( currentTextSize ) );
 
 
         // 화면 출력 역할 핸들러
