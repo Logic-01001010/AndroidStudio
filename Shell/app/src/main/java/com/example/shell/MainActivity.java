@@ -105,8 +105,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
         };
-        
-        
+
+
 
         ExampleThread thread = new ExampleThread();
         thread.start();
@@ -128,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
                     PrintWriter writer = new PrintWriter(  p.getOutputStream() );
                     writer.println( cmd );
                     writer.flush();
-
 
                     editText.setText(null);
                     scrollView.fullScroll(ScrollView.FOCUS_DOWN);
@@ -181,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
 
             new Thread(new Runnable(){
                 public void run(){
-                    byte[] buffer = new byte[8192];
+                    byte[] buffer = new byte[9999999];
                     int len = -1;
                     try {
                         while((len = stdOut.read(buffer)) > 0){
@@ -195,9 +194,10 @@ public class MainActivity extends AppCompatActivity {
                             cmd_result = str;
                             mHandler.sendEmptyMessage(0);
 
+                            Thread.sleep(100);
 
                         }
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
 
@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
 
             new Thread(new Runnable(){
                 public void run(){
-                    byte[] buffer = new byte[8192];
+                    byte[] buffer = new byte[9999999];
                     int len = -1;
                     try {
 
@@ -227,12 +227,12 @@ public class MainActivity extends AppCompatActivity {
                             cmd_result = str;
                             mHandler.sendEmptyMessage(0);
 
-
+                            Thread.sleep(100);
 
 
 
                         }
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
 
